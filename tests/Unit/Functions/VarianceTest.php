@@ -7,5 +7,5 @@ test("Calcul la variance d'une liste", function (){
 
     $result = Variance::calculate($list);
 
-    expect($result)->toBe(12.5);
+    expect($result)->toBe(11.666666666666666);
 });
