@@ -1,0 +1,22 @@
+{
+  "name": "sniiiperz/stats",
+  "description": "Librairie statistique",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "SniiiperZ\\Stats\\": "src/"
+    }
+  },
+  "require-dev": {
+    "pestphp/pest": "^2.35"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/pest"
+  }
+}
