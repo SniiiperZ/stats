@@ -11,7 +11,7 @@ test("Calcul la moyenne d'une liste", function () {
 });
 
 test("N'accepte pas de lettres", function () {
-    $list = ["a"];
+    $list = ["b"];
 
     $result = Average::calculate($list);
 
