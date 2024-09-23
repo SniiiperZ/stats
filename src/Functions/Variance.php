@@ -5,14 +5,19 @@ class Variance
 {
     public static function calculate(array $numbers): float
     {
-        $average = Average::calculate($numbers);
         $count = count($numbers);
-        $sum = 0;
 
-        foreach ($numbers as $number) {
-            $sum += ($number - $average) ** 2;
+        if ($count === 0) {
+            throw new \InvalidArgumentException("La liste ne peut pas être vide");
         }
+        $average = Average::calculate($numbers);
 
-        return $sum / $count;
+        $squareDiffs = array_map(function ($number) use ($average) {
+            return ($number - $average) ** 2;
+        }, $numbers);
+
+        $variance = array_sum($squareDiffs) / $count;
+
+        return $variance;
     }
 }

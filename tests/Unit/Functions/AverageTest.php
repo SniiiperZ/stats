@@ -23,3 +23,19 @@ test("Liste vide", function () {
 
     Average::calculate($list);
 })->throws(DivisionByZeroError::class);
+
+test("Accepte les nombres négatifs", function () {
+    $list = [-1, -2, -3, -4, -5];
+
+    $result = Average::calculate($list);
+
+    expect($result)->toBe(-3.0);
+});
+
+test("Accepte les nombres décimaux", function () {
+    $list = [1.5, 2.5, 3.5, 4.5, 5.5];
+
+    $result = Average::calculate($list);
+
+    expect($result)->toBe(3.5);
+});
